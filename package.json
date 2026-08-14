@@ -1,0 +1,13 @@
+{
+  "name": "portfolio",
+  "version": "1.0.0",
+  "description": "Minimal package.json created to allow npm install",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "test": "echo \"No tests specified\" && exit 0"
+  },
+  "keywords": [],
+  "author": "PeterMumo-120",
+  "license": "MIT"
+}
