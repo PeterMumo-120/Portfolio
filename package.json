@@ -1,11 +1,22 @@
 {
   "name": "portfolio",
   "version": "1.0.0",
-  "description": "Minimal package.json created to allow npm install",
-  "main": "src/index.js",
+  "description": "Portfolio project",
+  "main": "src/main.jsx",
+  "type": "module",
   "scripts": {
-    "start": "node src/index.js",
-    "test": "echo \"No tests specified\" && exit 0"
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "start": "vite"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.0.0",
+    "vite": "^4.3.0"
   },
   "keywords": [],
   "author": "PeterMumo-120",
