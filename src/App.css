@@ -1,3 +1,167 @@
+/* App styles: responsive layout for the projects UI */
+:root{
+  --bg: #121212;
+  --card: rgba(255,255,255,0.03);
+  --muted: rgba(255,255,255,0.7);
+  --accent-1: #646cff;
+  --accent-2: #535bf2;
+  --radius: 10px;
+}
+
+/* Page container */
+.app-root {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  color: inherit;
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  min-height: 100vh;
+}
+
+/* Header */
+.site-header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.25rem;
+}
+
+.site-brand h1 {
+  margin: 0;
+  font-size: 1.6rem;
+}
+.tagline {
+  margin: 0;
+  opacity: 0.9;
+  font-size: 0.95rem;
+}
+
+.controls {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.search input {
+  padding: 0.55rem 0.75rem;
+  border-radius: 10px;
+  border: 1px solid rgba(255,255,255,0.06);
+  background: transparent;
+  color: inherit;
+  min-width: 220px;
+}
+
+button.primary {
+  background: linear-gradient(90deg,var(--accent-1),var(--accent-2));
+  color: white;
+  border: none;
+  padding: 0.55rem 0.9rem;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+button.delete {
+  background: transparent;
+  color: var(--muted);
+  border: 1px solid rgba(255,255,255,0.05);
+  padding: 0.3rem 0.6rem;
+  border-radius: 6px;
+}
+
+/* Form */
+.project-form {
+  background: var(--card);
+  padding: 1rem;
+  border-radius: var(--radius);
+  margin-bottom: 1rem;
+}
+.project-form .form-row {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+.project-form label {
+  display: block;
+  flex: 1 1 220px;
+  font-size: 0.9rem;
+}
+.project-form input,
+.project-form textarea {
+  width: 100%;
+  padding: 0.5rem;
+  margin-top: 0.35rem;
+  border-radius: 8px;
+  border: 1px solid rgba(255,255,255,0.06);
+  background: transparent;
+  color: inherit;
+  resize: vertical;
+}
+
+.form-actions { margin-top: 0.75rem; }
+
+/* Projects grid */
+.projects-section .section-title { margin: 0 0 0.25rem 0; }
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0,1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+.card {
+  background: var(--card);
+  border-radius: 12px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  min-height: 220px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+}
+.thumb {
+  background-size: cover;
+  background-position: center;
+  height: 140px;
+}
+.card-body {
+  padding: 0.9rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  flex: 1;
+}
+.desc { margin: 0; opacity: 0.95; font-size: 0.95rem; }
+.meta {
+  margin-top: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.5rem;
+}
+.tags { display:flex; gap:0.4rem; flex-wrap:wrap; }
+.tag {
+  background: rgba(255,255,255,0.04);
+  padding: 0.25rem 0.5rem;
+  border-radius: 999px;
+  font-size: 0.8rem;
+}
+.empty { padding: 2rem; opacity: 0.9; }
+
+/* Footer */
+.site-footer { margin-top: 2rem; text-align: center; opacity: 0.85; }
+
+/* responsive */
+@media (max-width: 900px) {
+  .grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 600px) {
+  .grid { grid-template-columns: 1fr; }
+  .site-header { flex-direction: column; align-items: flex-start; }
+  .controls { width: 100%; justify-content: space-between; }
+  .search input { min-width: 0; width: 100%; }
+}
+
+/* Keep basic styling from previous file for #root and h1 */
 #root {
   max-width: 1280px;
   margin: 0 auto;
@@ -5,7 +169,4 @@
   text-align: center;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
-}
+h1 { font-size: 3.2em; line-height: 1.1; }
